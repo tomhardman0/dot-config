@@ -1,0 +1,19 @@
+name: bmll
+windows:
+  - bmll-api:
+      layout: 1004,80x24,0,0[80x12,0,0,11,80x11,0,13{40x11,0,13,12,39x11,41,13,13}]
+      panes:
+        - bmll_env && cd /Users/tom/Documents/bmll/bmll-api
+        - postgres -D /usr/local/var/postgres
+        - psql
+  - bmll-portal:
+      layout: cdaf,80x24,0,0[80x12,0,0{40x12,0,0,14,39x12,41,0,17},80x11,0,13{40x11,0,13,15,39x11,41,13,16}]
+      panes:
+        - bmll_env && cd /Users/tom/Documents/bmll/bmll-portal
+        - redis-server
+        - bmll_env && cd /Users/tom/Documents/bmll/bmll-portal
+        - cd /Users/tom/Documents/bmll/bmll-portal
+  - bmll-any:
+      layout: 5967,80x24,0,0,18
+      panes:
+        - bmll_env && cd /Users/tom/Documents/bmll
